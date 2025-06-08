@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr54g55ctg4br"]
+
+[ext_resource type="Texture2D" uid="uid://ck2b5qadnn0bf" path="res://Assets/kenney_new-platformer-pack-1.0/tilemap_packed - Copy.png" id="1_1rc8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(496, 108.5)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-77.25, -43.75)
+scale = Vector2(10.05, 8.03572)
+texture = ExtResource("1_1rc8e")
+region_enabled = true
+region_rect = Rect2(20, 2, 50, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-75, -44.75)
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true

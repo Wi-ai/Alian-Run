@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://rwbr8pxnbtn0"]
+
+[ext_resource type="Texture2D" uid="uid://bfy6qr8uwja4" path="res://Assets/kenney_new-platformer-pack-1.0/Sprites/Characters/Double/character_green_idle.png" id="1_65uas"]
+[ext_resource type="Script" uid="uid://bid7vksfhx8vx" path="res://Scripts/musk.gd" id="1_80l43"]
+[ext_resource type="Texture2D" uid="uid://ckgf4j1g5yqpm" path="res://Assets/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-characters-double.png" id="3_556rp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80l43"]
+atlas = ExtResource("1_65uas")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0a48"]
+atlas = ExtResource("3_556rp")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr061"]
+atlas = ExtResource("3_556rp")
+region = Rect2(768, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnig7"]
+atlas = ExtResource("3_556rp")
+region = Rect2(768, 1792, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_556rp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80l43")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0a48")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr061")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnig7")
+}],
+"loop": true,
+"name": &"run",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0a48"]
+radius = 42.0119
+
+[node name="Musk" type="CharacterBody2D"]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_80l43")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-55, -85.1875)
+scale = Vector2(0.648438, 0.662598)
+sprite_frames = SubResource("SpriteFrames_556rp")
+animation = &"jump"
+autoplay = "idle"
+frame_progress = 0.611024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-56, -46)
+shape = SubResource("CircleShape2D_k0a48")

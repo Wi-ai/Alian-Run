@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://voc43etorxn7"]
+
+[ext_resource type="Texture2D" uid="uid://c87145jp4tr0s" path="res://Assets/Sample B - Copy.png" id="1_1cj6p"]
+[ext_resource type="Script" uid="uid://c4j0oty847j8t" path="res://Scripts/manu.gd" id="1_qx6aq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qx6aq"]
+texture = ExtResource("1_1cj6p")
+modulate_color = Color(0.325441, 0.325441, 0.325441, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iok65"]
+bg_color = Color(0.689476, 0.899931, 0.934578, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Manu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qx6aq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qx6aq")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.029
+anchor_right = 0.001
+anchor_bottom = 0.029
+offset_left = 38.848
+offset_top = 21.208
+offset_right = 134.848
+offset_bottom = 53.208
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_iok65")
+text = "Back"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -125.0
+offset_top = 37.0
+offset_right = -29.0
+offset_bottom = 69.0
+grow_horizontal = 0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_iok65")
+text = "shop"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.102
+anchor_top = 0.479
+anchor_right = 0.102
+anchor_bottom = 0.479
+offset_left = -39.504
+offset_top = -29.392
+offset_right = 39.496
+offset_bottom = 29.608
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_iok65")
+text = "1"
+
+[connection signal="pressed" from="Button" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Level_1_pressed"]

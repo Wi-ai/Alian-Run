@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgsr6nmrbgyxk"]
+
+[ext_resource type="Texture2D" uid="uid://dbiosa8rcrf1w" path="res://Assets/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-enemies-double.png" id="1_2j3bc"]
+[ext_resource type="Script" uid="uid://embe2qrbv6se" path="res://Scripts/stand_bee.gd" id="1_3a2f6"]
+[ext_resource type="PackedScene" uid="uid://llc1lrfcaqxc" path="res://Scenes/kill_zone.tscn" id="2_3a2f6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0sqw"]
+atlas = ExtResource("1_2j3bc")
+region = Rect2(384, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxf2y"]
+atlas = ExtResource("1_2j3bc")
+region = Rect2(896, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_topqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0sqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxf2y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o503"]
+size = Vector2(58.0757, 74.367)
+
+[node name="Standbee" type="Node2D"]
+script = ExtResource("1_3a2f6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_topqd")
+autoplay = "default"
+
+[node name="Kill zone" parent="." instance=ExtResource("2_3a2f6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill zone"]
+position = Vector2(-0.483109, 16.5054)
+rotation = -1.58202
+scale = Vector2(1.08511, -1.60007)
+shape = SubResource("RectangleShape2D_3o503")

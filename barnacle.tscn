@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://lethcdh06n64"]
+
+[ext_resource type="Texture2D" uid="uid://dbiosa8rcrf1w" path="res://Assets/kenney_new-platformer-pack-1.0/Spritesheets/spritesheet-enemies-double.png" id="1_f6pix"]
+[ext_resource type="PackedScene" uid="uid://llc1lrfcaqxc" path="res://Scenes/kill_zone.tscn" id="2_lultk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkc40"]
+atlas = ExtResource("1_f6pix")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tqa1"]
+atlas = ExtResource("1_f6pix")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_my7rf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkc40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tqa1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijcbc"]
+size = Vector2(83, 120)
+
+[node name="barnacle" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_my7rf")
+autoplay = "default"
+frame_progress = 0.252802
+
+[node name="Kill zone" parent="." instance=ExtResource("2_lultk")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill zone"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_ijcbc")

@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=3 uid="uid://df6wmwnpwtsex"]
+
+[ext_resource type="Script" uid="uid://fg2meuhfq3k5" path="res://Scripts/main_manu.gd" id="1_5uxu5"]
+[ext_resource type="Texture2D" uid="uid://cayhewch3crb7" path="res://Assets/Sample A - Copy.png" id="1_na007"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5uxu5"]
+texture = ExtResource("1_na007")
+modulate_color = Color(0.306923, 0.306923, 0.306923, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na007"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_na007"]
+bg_color = Color(0.24348, 0.288474, 0.285749, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.192157)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uxu5"]
+bg_color = Color(0.276986, 0.326332, 0.323337, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.192157)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csa7x"]
+bg_color = Color(0.648402, 0.774728, 0.735669, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.192157)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xo5pf"]
+bg_color = Color(0.311125, 0.364599, 0.361345, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.192157)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2eirw"]
+bg_color = Color(0.190958, 0.228664, 0.226386, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.192157)
+shadow_size = 5
+
+[node name="MainManu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5uxu5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5uxu5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -67.0
+offset_right = 299.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_na007")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_na007")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5uxu5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_csa7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xo5pf")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_csa7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2eirw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_csa7x")
+text = "Start  Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_na007")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_na007")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5uxu5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_csa7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xo5pf")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_csa7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2eirw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_csa7x")
+text = "Multipayer"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_na007")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_na007")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5uxu5")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_csa7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xo5pf")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_csa7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2eirw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_csa7x")
+text = "Options"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.212
+anchor_right = 0.504
+anchor_bottom = 0.212
+offset_left = -218.608
+offset_top = -56.376
+offset_right = 219.392
+offset_bottom = 56.624
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 77
+text = "Alian Rush"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_options_pressed"]

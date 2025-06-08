@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddb3yfko4jype"]
+
+[ext_resource type="Script" uid="uid://bew54m5547xfw" path="res://Scripts/snail.gd" id="1_fnba0"]
+[ext_resource type="Texture2D" uid="uid://cc83sdxfb6niv" path="res://Assets/enemies/enemies.png" id="1_qjijy"]
+[ext_resource type="PackedScene" uid="uid://llc1lrfcaqxc" path="res://Scenes/kill_zone.tscn" id="2_fnba0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_casb8"]
+atlas = ExtResource("1_qjijy")
+region = Rect2(0, 0, 28, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqs8f"]
+atlas = ExtResource("1_qjijy")
+region = Rect2(28, 0, 28, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dokh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_casb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqs8f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyufb"]
+size = Vector2(96, 78)
+
+[node name="snail" type="Node2D"]
+script = ExtResource("1_fnba0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(10, -52)
+scale = Vector2(4.24107, 3.96667)
+sprite_frames = SubResource("SpriteFrames_5dokh")
+autoplay = "default"
+frame_progress = 0.55814
+flip_h = true
+
+[node name="Kill zone" parent="." instance=ExtResource("2_fnba0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill zone"]
+position = Vector2(-2, -44)
+shape = SubResource("RectangleShape2D_cyufb")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -43)
+target_position = Vector2(56, -1)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -43)
+target_position = Vector2(-62, 0)
